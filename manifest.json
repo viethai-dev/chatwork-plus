@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3,
+    "name": "Chatwork++",
+    "version": "2025.08",
+    "description": "Enhance Chatwork with @mentions, code blocks, and animated emoji.",
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://*.chatwork.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.chatwork.com/*"
+            ],
+            "js": [
+                "index.js"
+            ],
+            "css": [
+                "assets/style.css"
+            ],
+            "type": "module"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "assets/constant.js"
+            ],
+            "matches": [
+                "*://*.chatwork.com/*"
+            ]
+        }
+    ],
+    "icons": {
+        "128": "icons/icon128.png",
+        "48": "icons/icon48.png",
+        "16": "icons/icon16.png"
+    },
+    "action": {
+        "default_title": "Chatwork++"
+    }
+}
